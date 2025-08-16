@@ -1,7 +1,11 @@
 import { Button, Divider } from "antd";
 import { QrcodeOutlined, CalendarOutlined } from "@ant-design/icons";
+import { useState } from "react";
+import QRModal from "./QRModal";
 
 function UpcomingAppointmentCard({ appointment }) {
+  const [showQRModal, setShowQRModal] = useState(false);
+
   return (
     <>
       <div key={appointment.id} className="">
@@ -35,12 +39,19 @@ function UpcomingAppointmentCard({ appointment }) {
                 size="large"
                 type="text"
                 icon={<QrcodeOutlined style={{ fontSize: "1.2rem" }} />}
-                onClick={() => showQR(appointment.referenceId)}
+                onClick={() => setShowQRModal(true)}
               />
             </div>
           </div>
         </div>
       </div>
+      <QRModal
+        referenceId={appointment.referenceId}
+        appointmentDate={appointment.date}
+        timeSlots={appointment.timeslot}
+        visible={showQRModal}
+        onClose={() => setShowQRModal(false)}
+      />
       <Divider />
     </>
   );

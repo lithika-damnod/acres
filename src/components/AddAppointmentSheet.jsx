@@ -37,7 +37,7 @@ function AddAppointmentSheet({ onClose }) {
   const { mutate, isPending, isError } = useMutation({
     mutationFn: createNewAppointment,
     onSuccess: () => {
-      navigate("/");
+      onClose();
     },
   });
 
