@@ -57,3 +57,27 @@ export async function getUpcomingAppointments() {
     },
   ];
 }
+
+// TODO: 
+export async function getPastAppointments() {
+  return [
+    {
+      referenceId: "APT-001",
+      appointmentType: "Deed Registration",
+      date: "2025-08-20",
+      timeslot: "09:00 AM – 09:30 AM",
+    },
+    {
+      referenceId: "APT-002",
+      appointmentType: "Title Registration (Bim Saviya Program)",
+      date: "2025-08-21",
+      timeslot: "10:00 AM – 10:30 AM",
+    },
+    {
+      referenceId: "APT-003",
+      appointmentType: "Certified Copies / Extracts of Deeds",
+      date: "2025-08-22",
+      timeslot: "02:00 PM – 02:30 PM",
+    },
+  ];
+}
